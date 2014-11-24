@@ -25,8 +25,13 @@
 	</bean>
 	<bean id="downloadAction" class="com.graduate.action.DownloadAction" scope="prototype">
 	</bean> -->
+	<!-- 角色管理 -->
 	<bean id="roleAction" class="com.wb.action.RoleAction" scope="prototype">
      <property name="roleService" ref="roleService"></property>
+	</bean> 
+	<!-- 部门管理 -->
+	<bean id="departmentAction" class="com.wb.action.DepartmentAction" scope="prototype">
+     <property name="departmentService" ref="departmentService"></property>
 	</bean> 
   
 </beans>

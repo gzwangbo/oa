@@ -1,5 +1,7 @@
 package com.wb.dao.imp;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -63,6 +65,14 @@ public class DepartmentDaoImpl implements DepartmentDao{
 	public void delete(int[] ids) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Department> findAll() {
+		// TODO Auto-generated method stub
+		List list=getSession().createQuery("from Department").list();
+		
+		return list;
 	}
 
 }

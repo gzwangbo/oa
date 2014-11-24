@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Transaction;
 
+import com.wb.bean.Department;
 import com.wb.bean.Role;
 import com.wb.dao.imp.DepartmentDaoImpl;
 import com.wb.dao.imp.RoleDaoImpl;
@@ -22,6 +23,42 @@ public class DepartmentServiceImpl implements DepartmentService{
 		this.departmentDao = departmentDao;
 	}
 
-	
+	public void save(Department department) {
+		// TODO Auto-generated method stub
+		departmentDao.save(department);
+	}
+
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		departmentDao.delete(id);
+	}
+
+	public Department find(int id) {
+		// TODO Auto-generated method stub
+		return departmentDao.find(id);
+	}
+
+	public void update(Department department) {
+		// TODO Auto-generated method stub
+		departmentDao.update(department);
+	}
+	public List findAll(){
+		
+		return departmentDao.findAll();
+	}
+
+	@Override
+	public List<Department> findTopList() {
+		// TODO Auto-generated method stub
+		return departmentDao.getSession().createQuery("from Department d where d.parent.id=null").list();
+	}
+
+	@Override
+	public List<Department> findChildren(int parentId) {
+		// TODO Auto-generated method stub
+		return departmentDao.getSession().createQuery("from Department d where d.parent.id=?")
+				.setParameter(0,parentId).list();
+	}
+
 	
 }

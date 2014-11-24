@@ -24,7 +24,12 @@
 	<!-- <bean id="testService" class="com.wb.test.TestService">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean> -->
+	<!-- 角色管理 -->
 	<bean id="roleService" class="com.wb.service.impl.RoleServiceImpl">
 		<property name="roleDao" ref="roleDao"/>
+	</bean>
+	<!-- 部门管理 -->
+	<bean id="departmentService" class="com.wb.service.impl.DepartmentServiceImpl">
+		<property name="departmentDao" ref="departmentDao"/>
 	</bean>
 </beans>

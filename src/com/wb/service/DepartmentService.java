@@ -1,5 +1,10 @@
 package com.wb.service;
 
-public interface DepartmentService {
+import java.util.List;
 
+import com.wb.bean.Department;
+
+public interface DepartmentService {
+  public List<Department> findTopList();
+  public List<Department> findChildren(int parentId);
 }

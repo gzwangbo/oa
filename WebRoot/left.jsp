@@ -184,10 +184,10 @@
             <div onClick="menuClick(this);" class="level1Style"><img src="style/images/MenuIcon/FUNC20082.gif" class="Icon" /> 系统管理</div>
             <ul style="display: none;" class="MenuLevel2">
                 <li class="level2">
-                    <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="System_Role/list.html"> 岗位管理</a></div>
+                    <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="role_list"> 岗位管理</a></div>
                 </li>
                 <li class="level2">
-                    <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="System_Department/list.html"> 部门管理</a></div>
+                    <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="department_list"> 部门管理</a></div>
                 </li>
                 <li class="level2">
                     <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="System_User/list.html"> 用户管理</a></div>

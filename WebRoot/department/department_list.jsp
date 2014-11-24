@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <title>部门列表</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script language="javascript" src="../script/jquery.js"></script>
-    <script language="javascript" src="../script/pageCommon.js" charset="utf-8"></script>
-    <script language="javascript" src="../script/PageUtils.js" charset="utf-8"></script>
-    <script language="javascript" src="../script/DemoData.js" charset="utf-8"></script>
-	<script language="javascript" src="../script/DataShowManager.js" charset="utf-8"></script>
-    <link type="text/css" rel="stylesheet" href="../style/blue/pageCommon.css" />
+    <script language="javascript" src="${pageContext.request.contextPath}/script/jquery.js"></script>
+    <script language="javascript" src="${pageContext.request.contextPath}/script/pageCommon.js" charset="utf-8"></script>
+    <script language="javascript" src="${pageContext.request.contextPath}/script/PageUtils.js" charset="utf-8"></script>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
     <script type="text/javascript">
     </script>
 </head>
@@ -20,7 +19,7 @@
     <div id="Title_bar_Head">
         <div id="Title_Head"></div>
         <div id="Title"><!--页面标题-->
-            <img border="0" width="13" height="13" src="../style/images/title_arrow.gif"/> 部门管理
+            <img border="0" width="13" height="13" src="${pageContext.request.contextPath}/style/images/title_arrow.gif"/> 部门管理
         </div>
         <div id="Title_End"></div>
     </div>
@@ -40,23 +39,29 @@
         </thead>
 
 		<!--显示数据列表-->
-        <tbody id="TableData" class="dataContainer" datakey="departmentList">
+        <tbody id="TableData" class="dataContainer" >
+        <s:iterator value="#list">
 			<tr class="TableDetail1 template">
-				<td><a href="_list_level2.html">${department.name}</a>&nbsp;</td>
-				<td>${department.parent.name}&nbsp;</td>
-				<td>${department.description}&nbsp;</td>
-				<td><a onClick="return window.confirm('这将删除所有的下级部门，您确定要删除吗？')" href="#">删除</a>
-					<a href="saveUI.html">修改</a>
+				<td><s:a action="department_list?parentId=%{id}">${name}</s:a>&nbsp;</td>
+				<td>${parent.name}&nbsp;</td>
+				<td>${description}&nbsp;</td>
+				<td><s:a action="department_delete?id=%{id}" onClick="return window.confirm('这将删除所有的下级部门，您确定要删除吗？')" >删除</s:a>
+					<s:a href="department_updateInput?id=%{id}">修改</s:a>
 				</td>
 			</tr>
+		</s:iterator>	
         </tbody>
     </table>
     
     <!-- 其他功能超链接 -->
     <div id="TableTail">
         <div id="TableTail_inside">
-            <a href="saveUI.html"><img src="../style/images/createNew.png" /></a>
+            <a href="department_saveInput.action"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></a>
+             <s:if test="#parent!=null">
+        <s:a action="department_list?id=%{parent.id}">返回上一层</s:a>
+        </s:if>
         </div>
+      
     </div>
 </div>
 

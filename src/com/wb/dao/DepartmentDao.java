@@ -1,5 +1,7 @@
 package com.wb.dao;
 
+import java.util.List;
+
 import com.wb.bean.Department;
 
 
@@ -12,6 +14,7 @@ public void delete(int id);
 public Department find(int id);
 public void update(Department department);
 public void delete(int[] ids);
+public List<Department> findAll();
 
 
 }

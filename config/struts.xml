@@ -76,10 +76,17 @@
     
     <package name="default" namespace="/" extends="struts-default">
 		<action name="*_*" class="{1}Action" method="{2}" >
-			<result name="{2}">role/{1}_{2}.jsp</result>
-		    <result name="tolist" type="redirectAction">role_list</result>
+			<result name="{2}">{1}/{1}_{2}.jsp</result>
+		    <result name="tolist" type="redirectAction">{1}_list</result>
 			
 			
 		</action>
+		
+		<!--  <action name="department_*" class="departmentAction" method="{1}" >
+			<result name="{1}">department/department_{1}.jsp</result>
+		    <result name="tolist" type="redirectAction">department_list</result>
+			
+			
+		</action>  -->
 	</package>
 </struts>
