@@ -30,6 +30,7 @@
          <mapping resource="com/wb/bean/User.hbm.xml"/>
           <mapping resource="com/wb/bean/Department.hbm.xml"/>
            <mapping resource="com/wb/bean/Role.hbm.xml"/>
+            <mapping resource="com/wb/bean/Privilege.hbm.xml"/>
           
     </session-factory>
 

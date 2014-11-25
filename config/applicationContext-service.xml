@@ -32,4 +32,9 @@
 	<bean id="departmentService" class="com.wb.service.impl.DepartmentServiceImpl">
 		<property name="departmentDao" ref="departmentDao"/>
 	</bean>
+	
+	<!-- 部门管理 -->
+	<bean id="privilegeService" class="com.wb.service.impl.PrivilegeServiceImpl">
+		<property name="privilegeDao" ref="privilegeDao"/>
+	</bean>
 </beans>

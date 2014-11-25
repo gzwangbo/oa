@@ -33,5 +33,10 @@
 	<bean id="departmentAction" class="com.wb.action.DepartmentAction" scope="prototype">
      <property name="departmentService" ref="departmentService"></property>
 	</bean> 
+	
+		<!-- 部门管理 -->
+	<bean id="privilegeAction" class="com.wb.action.PrivilegeAction" scope="prototype">
+     <property name="privilegeService" ref="privilegeService"></property>
+	</bean> 
   
 </beans>

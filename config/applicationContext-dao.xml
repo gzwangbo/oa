@@ -34,4 +34,9 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
+	<!-- 权限管理 -->
+	<bean id="privilegeDao" class="com.wb.dao.imp.PrivilegeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
 </beans>
