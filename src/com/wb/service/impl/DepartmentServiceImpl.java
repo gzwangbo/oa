@@ -35,6 +35,7 @@ public class DepartmentServiceImpl implements DepartmentService{
 
 	public Department find(int id) {
 		// TODO Auto-generated method stub
+		
 		return departmentDao.find(id);
 	}
 

@@ -54,10 +54,12 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
 
 
 	public String list(){
+ //  System.out.println(parentId);
     List list=null;
     if(parentId==null){
     	
     	list=departmentService.findTopList();
+    //	 System.out.println("qqqqq");
     
     }else{
     	
@@ -65,15 +67,21 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
     			.findChildren(Integer.parseInt(parentId));
     	Department parent=departmentService.find(Integer.parseInt(parentId));
     	ActionContext.getContext().put("parent", parent);
-    	
+    	// System.out.println("wwww");
     }
 	ActionContext.getContext().put("list", list);
 	return "list";	
 	}
 	
 	public String save(){
-	department.setParent(departmentService.find(Integer.parseInt(parentId)));
-	departmentService.save(department);
+		  System.out.println("parent"+parentId);
+		  if(parentId==null||parentId.equals("")){
+			 // department.setParent(null);
+			  departmentService.save(department);
+			  System.out.println("holle");
+		  }else
+	      department.setParent(departmentService.find(Integer.parseInt(parentId)));
+	      departmentService.save(department);
 	return "tolist";
 	}
 	public String saveInput(){

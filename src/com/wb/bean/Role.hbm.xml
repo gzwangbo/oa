@@ -12,8 +12,8 @@
 		<property name="description"/>
 		<!-- Role和User是多对多的关系 -->
 		<set name="users" table="t_user_role" >
-		    <key column="userId"></key>
-		    <many-to-many  class="Role" column="roleId"></many-to-many>
+		    <key column="roleId"></key>
+		    <many-to-many  class="User" column="userId"></many-to-many>
 		    
 		</set>
 		

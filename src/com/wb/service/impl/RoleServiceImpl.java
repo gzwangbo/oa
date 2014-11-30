@@ -1,5 +1,6 @@
 package com.wb.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Transaction;
@@ -46,6 +47,21 @@ public void delete(int[] ids) {
 public Role find(int id) {
 	// TODO Auto-generated method stub
 	return roleDao.find(id);
+	
+}
+
+public List<Role> find(int [] id) {
+	// TODO Auto-generated method stub
+	List<Role> list=new ArrayList<Role>();
+	for(int i=0;i<id.length;i++){
+		
+		Role role=find(id[i]);
+		list.add(role);
+		
+	}
+	
+	return list;
+	
 	
 }
 

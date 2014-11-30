@@ -8,6 +8,7 @@ private int id;
 private String name;
 private String password;
 private String loginName;
+private String gender;
 private String email;
 private String phoneNumber;
 private Set<Role> roles=new HashSet<Role>();
@@ -15,6 +16,13 @@ private Department department;
 private String description;
 
 
+
+public String getGender() {
+	return gender;
+}
+public void setGender(String gender) {
+	this.gender = gender;
+}
 public String getDescription() {
 	return description;
 }

@@ -39,4 +39,9 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
+	<!-- 用户管理 -->
+	<bean id="userDao" class="com.wb.dao.imp.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
 </beans>

@@ -48,6 +48,7 @@ public class DepartmentDaoImpl implements DepartmentDao{
 	@Override
 	public Department find(int id) {
 		// TODO Auto-generated method stub
+		
 		return (Department)getSession().get(Department.class,id);
 	}
 

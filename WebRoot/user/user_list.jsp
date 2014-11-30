@@ -43,24 +43,28 @@
         
         <!--显示数据列表-->
         <tbody id="TableData" class="dataContainer" >
+        <s:iterator value="#list">
             <tr class="TableDetail1 template">
                 <td>${loginName}&nbsp;</td>
                 <td>${name}&nbsp;</td>
-                <td>${department}&nbsp;</td>
-                <td>${roles}&nbsp;</td>
+                <td>${department.name}&nbsp;</td>
+            <td><s:iterator value="roles">
+                ${name} &nbsp;
+                </s:iterator></td>
                 <td>${description}&nbsp;</td>
                 <td><a onClick="return delConfirm()" href="list.html">删除</a>
                     <a href="saveUI.html">修改</a>
 					<a href="#" onClick="return window.confirm('您确定要初始化密码为1234吗？')">初始化密码</a>
                 </td>
             </tr>
+            </s:iterator>
         </tbody>
     </table>
     
     <!-- 其他功能超链接 -->
     <div id="TableTail">
         <div id="TableTail_inside">
-            <s:a action="user_save"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></s:a>
+            <s:a action="user_saveInput"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></s:a>
         </div>
     </div>
 </div>

@@ -12,12 +12,13 @@
 		<property name="password"/>
 		<property name="loginName"/>
 		<property name="email"/>
+	    <property name="gender"/>
 		<property name="phoneNumber"/>
 		<property name="description"/>
 		<!--User和ROle是多对多的关系  -->
 		<set name="roles" table="t_user_role" >
-		    <key column="roleId"></key>
-		    <many-to-many class="User" column="userId"></many-to-many>
+		    <key column="userId"></key>
+		    <many-to-many class="Role" column="roleId"></many-to-many>
 		    
 		</set>
 	

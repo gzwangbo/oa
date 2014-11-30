@@ -34,9 +34,16 @@
      <property name="departmentService" ref="departmentService"></property>
 	</bean> 
 	
-		<!-- 部门管理 -->
+		<!-- 权限管理 -->
 	<bean id="privilegeAction" class="com.wb.action.PrivilegeAction" scope="prototype">
      <property name="privilegeService" ref="privilegeService"></property>
+	</bean> 
+	
+		<!-- 用户管理 -->
+	<bean id="userAction" class="com.wb.action.UserAction" scope="prototype">
+     <property name="userService" ref="userService"></property>
+     <property name="departmentService" ref="departmentService"></property> 
+     <property name="roleService" ref="roleService"></property>
 	</bean> 
   
 </beans>

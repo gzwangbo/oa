@@ -1,5 +1,9 @@
 package com.wb.service;
 
-public interface RoleService {
+import java.util.List;
 
+import com.wb.bean.Role;
+
+public interface RoleService {
+	public List<Role> find(int [] id);
 }
